@@ -3,6 +3,10 @@ var menuMain = document.querySelector(".main-header__menu");
 var navbtn = document.querySelector(".main-nav__menu-btn");
 
 navMain.classList.remove("main-nav_nojs");
+navMain.classList.remove("main-nav_opened");
+navMain.classList.add("main-nav_closed");
+menuMain.classList.remove("main-header__menu_opened");
+menuMain.classList.add("main-header__menu_closed");
 
 navbtn.addEventListener("click", function() {
 if (navMain.classList.contains("main-nav_closed")) {

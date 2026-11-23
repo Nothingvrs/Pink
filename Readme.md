@@ -1,60 +1,55 @@
-# Личный проект «Пинк» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
+# Pink — адаптивный лендинг
 
-* Студент: [Роман Верещагин](https://up.htmlacademy.ru/adaptive/15/user/479791).
-* Наставник: [Дмитрий Могиль](https://htmlacademy.ru/profile/id398003).
+Промо-сайт приложения для обработки фотографий «Pink»: три страницы — главная, лента фотографий пользователей с редактором и форма конкурса.
 
----
+**Демо:** <https://nothingvrs.github.io/Pink/>
 
-**Обратите внимание, что папка с вашими исходными файлами — `source/`.**
+| Десктоп | Планшет | Мобайл |
+| --- | --- | --- |
+| ![Главная, десктоп](screenshots/index-desktop.png) | ![Главная, планшет](screenshots/index-tablet.png) | ![Главная, мобайл](screenshots/index-mobile.png) |
 
-Полезный файл:
+![Фотографии пользователей](screenshots/photo-desktop.png)
 
-- [Contributing.md](Contributing.md) — руководство по внесению изменений.
+## Стек
 
-_Не удаляйте и не обращайте внимание на файлы:_<br>
-_`.editorconfig`, `.gitattributes`, `.gitignore`, `.stylelintrc`, `.travis.yml`, `package-lock.json`, `package.json`._
+- HTML5, LESS (БЭМ)
+- Gulp 4: LESS → PostCSS/autoprefixer, локальный сервер (browser-sync)
+- Ванильный JS (ES5): мобильное меню-бургер, picturefill, SVG-спрайт (svgxuse)
 
----
+## Что реализовано
 
-### Памятка
+- Адаптивная вёрстка под три брейкпоинта: мобайл / планшет / десктоп
+- БЭМ-методология и блочная структура LESS (`docs/less/blocks/`)
+- Картинки @1x/@2x и webp через `<picture>`, SVG-спрайт иконок
+- Мобильное меню-бургер (работает и без JS — меню раскрыто)
+- Страница «Фотографии»: лента постов, панорама дня, фоторедактор
+- Страница «Конкурс»: форма с ползунками редактора
 
-#### 1. Зарегистрируйтесь на Гитхабе
-
-Если у вас ещё нет аккаунта на [github.com](https://github.com/join), скорее зарегистрируйтесь.
-
-#### 2. Создайте форк
-
-Откройте репозиторий и нажмите кнопку «Fork» в правом верхнем углу. Репозиторий из Академии будет скопирован в ваш аккаунт.
-
-<img width="769" alt="" src="https://cloud.githubusercontent.com/assets/10909/15455696/52f9152e-206d-11e6-9e2d-5c6a68f29419.png">
-
-Получится вот так:
-
-<img width="769" alt="" src="https://cloud.githubusercontent.com/assets/10909/15455697/531c27c6-206d-11e6-80d5-365e13dd691d.png">
-
-#### 3. Клонируйте репозиторий на свой компьютер
-
-Будьте внимательны: нужно клонировать свой репозиторий (форк), а не репозиторий Академии. Также обратите внимание, что клонировать репозиторий нужно через SSH, а не через HTTPS. Нажмите зелёную кнопку в правой части экрана, чтобы скопировать SSH-адрес вашего репозитория:
-
-<img width="769" alt="" src="https://cloud.githubusercontent.com/assets/10909/26306255/51a677ea-3efb-11e7-8f8f-b2f929bfda21.png">
-
-Клонировать репозиторий можно так:
+## Структура
 
 ```
-git clone SSH-адрес_вашего_форка
+docs/          исходники и готовый сайт (из этой папки отдаётся GitHub Pages)
+  less/        LESS-блоки
+  css/         собранные стили
+  js/          menu.js, picturefill.js, svgxuse.js
+  img/         изображения, спрайты
+screenshots/   скриншоты для README
 ```
 
-Команда клонирует репозиторий на ваш компьютер и подготовит всё необходимое для старта работы.
+## Запуск
 
-#### 4. Начинайте обучение!
+Сайт статический — достаточно открыть `docs/index.html`.
 
----
+Для разработки со сборкой стилей и livereload:
 
-<a href="https://htmlacademy.ru/intensive/adaptive"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/adaptive/logo-for-github-2.png"></a>
+```bash
+npm install
+npm start
+```
 
-Репозиторий создан для обучения на интенсивном онлайн‑курсе «[Профессиональный HTML и CSS](https://htmlacademy.ru/intensive/adaptive)», уровень 2 от [HTML Academy](https://htmlacademy.ru).
+> Сборка на Gulp 4 (инструменты 2019 года, `engines: node 8.12`). Для просмотра сайта сборка не нужна — `docs/css/style.css` уже собран и закоммичен.
 
-[travis-image]: https://travis-ci.com/htmlacademy-adaptive/479791-pink.svg?branch=master
-[travis-url]: https://travis-ci.com/htmlacademy-adaptive/479791-pink
-[dependency-image]: https://david-dm.org/htmlacademy-adaptive/479791-pink/dev-status.svg?style=flat-square
-[dependency-url]: https://david-dm.org/htmlacademy-adaptive/479791-pink?type=dev
+## Учебный проект
+
+Курс «[Профессиональный HTML и CSS, уровень 2 (адаптив)](https://htmlacademy.ru/intensive/adaptive)», HTML Academy.
+Автор: [Роман Верещагин](https://github.com/Nothingvrs).
